@@ -1,6 +1,8 @@
 package com.accesoadatos.hibernate.andaluciaskills.dominio;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "prueba")
@@ -10,6 +12,9 @@ public class Prueba {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombre;
+
+    @ManyToMany(mappedBy = "pruebas")
+    private Set<Competidor> competidores = new HashSet<>();
 
     public Prueba(String nombre) {
         this.nombre = nombre;

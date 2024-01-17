@@ -3,7 +3,7 @@
     <persistence-unit name="AndaluciaSkills" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/AndaluciaSkills?zeroDateTimeBehavior=convertToNull&amp;serverTimezone=UTC"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/andaluciaskills?zeroDateTimeBehavior=convertToNull&amp;serverTimezone=UTC"/>
             <property name="javax.persistence.jdbc.user" value="andaluciaskills"/>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.password" value="andalucia"/>

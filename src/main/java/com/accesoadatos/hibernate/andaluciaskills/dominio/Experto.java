@@ -12,7 +12,7 @@ public class Experto {
 
     private String nombre;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn
     private Especialidad id_especialidad;
 

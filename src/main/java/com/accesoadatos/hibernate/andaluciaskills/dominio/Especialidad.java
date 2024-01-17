@@ -1,6 +1,8 @@
 package com.accesoadatos.hibernate.andaluciaskills.dominio;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "especialidad")
@@ -15,12 +17,11 @@ public class Especialidad {
 
     private String nombre;
 
-    @OneToMany(mappedBy = "id_especialidad")
+    @OneToOne(mappedBy = "id_especialidad")
     private Experto experto;
 
     @OneToMany(mappedBy = "id_especialidad")
-    private Competidor competidor;
-
+    private Set<Competidor> competidores = new HashSet<>();
     public Especialidad(int cod, String nombre) {
         this.cod = cod;
         this.nombre = nombre;

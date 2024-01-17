@@ -1,6 +1,8 @@
 package com.accesoadatos.hibernate.andaluciaskills.dominio;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "competidor")
@@ -15,6 +17,12 @@ public class Competidor {
     @ManyToOne
     @JoinColumn
     private Especialidad id_especialidad;
+
+    @OneToMany
+    @JoinTable(name = "puntuacion_prueba",
+    joinColumns = @JoinColumn(name = "competidor_id"),
+    inverseJoinColumns = @JoinColumn(name = "prueba_id"))
+    private Set<Prueba> pruebas = new HashSet<>();
 
     public Competidor(String nombre, String centro) {
         this.nombre = nombre;
