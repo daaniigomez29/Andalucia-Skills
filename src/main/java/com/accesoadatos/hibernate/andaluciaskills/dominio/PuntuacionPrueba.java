@@ -23,4 +23,9 @@ public class PuntuacionPrueba implements Serializable {
         this.puntuacion = puntuacion;
     }
 
+    public PuntuacionPrueba(Competidor competidor_id, Prueba prueba, int puntuacion) {
+        this.competidor_id = competidor_id;
+        this.prueba = prueba;
+        this.puntuacion = puntuacion;
+    }
 }

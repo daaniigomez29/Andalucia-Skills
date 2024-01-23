@@ -18,7 +18,7 @@ public class Competidor {
     @JoinColumn
     private Especialidad id_especialidad;
 
-    @OneToMany
+    @ManyToMany
     @JoinTable(name = "puntuacion_prueba",
     joinColumns = @JoinColumn(name = "competidor_id"),
     inverseJoinColumns = @JoinColumn(name = "prueba_id"))
@@ -27,6 +27,12 @@ public class Competidor {
     public Competidor(String nombre, String centro) {
         this.nombre = nombre;
         this.centro = centro;
+    }
+
+    public Competidor(String nombre, String centro, Especialidad especialidad) {
+        this.nombre = nombre;
+        this.centro = centro;
+        this.id_especialidad = especialidad;
     }
 
     public int getId() {

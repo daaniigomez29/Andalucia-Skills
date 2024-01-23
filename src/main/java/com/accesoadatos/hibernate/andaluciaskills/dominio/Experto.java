@@ -24,6 +24,12 @@ public class Experto {
         this.nombre = nombre;
     }
 
+    public Experto(String nombre, Especialidad id_especialidad, Usuario id_usuario) {
+        this.nombre = nombre;
+        this.id_especialidad = id_especialidad;
+        this.id_usuario = id_usuario;
+    }
+
     public int getId() {
         return id;
     }
